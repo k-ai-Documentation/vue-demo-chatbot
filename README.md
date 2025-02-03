@@ -4,7 +4,7 @@
 This project is a demo for vue3, which contains 'chatbot' function with sdk-js. This demo will show you how to use sdk-js and chatbot in vue3.
 
 ## Before setup
-clone [vue-demo-chabot](https://github.com/k-ai-Documentation/vue-demo-chatbot)
+Clone [vue-demo-chabot](https://github.com/k-ai-Documentation/vue-demo-chatbot)
 
 And your directory should like this:
 ```
