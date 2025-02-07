@@ -104,7 +104,7 @@ async function processSearchResult(result: any) {
             if (result['datas']['documents'].length > 0) {
                 let documents = '';
                 for (let doc of result['datas']['documents']) {
-                    documents += `name: ${doc.name}<br>url: <a href="${doc.url}" target="_blank">${doc.url}</a><br><br>`;
+                    documents += `name: ${doc.name}<br>url: <a href="${doc.url}" style="color: var(--primary-color)" target="_blank">${doc.url}</a><br><br>`;
                 }
                 messageHistory.value.push({ from: 'assistance', message: 'Source:' });
                 messageHistory.value.push({ from: 'assistance', message: documents });
@@ -148,7 +148,7 @@ onMounted(() => {
         width: 100%;
         height: 100%;
         border-radius: 10px;
-        background-color: white;
+        background-color: var(--grey-4-color);
         padding: 20px;
         overflow: scroll;
         button {
@@ -190,7 +190,7 @@ onMounted(() => {
                 max-width: 80%;
                 align-items: center;
                 .user-color {
-                    background-color: var(--grey-color);
+                    background-color: var(--color-border);
                 }
             }
         }
