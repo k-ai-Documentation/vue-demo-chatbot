@@ -12,7 +12,8 @@
     "kai-assets": "git@github.com:k-ai-Documentation/kai-assets.git",
     "kaistudio-sdk-js": "git@github.com:k-ai-Documentation/sdk-js.git#version2.0",
     "pug": "^3.0.3",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-buffer": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^22.13.0",
