@@ -73,7 +73,7 @@ const sendMessage = async () => {
 async function conversation() {
     try {
         step.value = 'searching';
-        return await kaiSearch.chatbot().conversation(conversationId.value, userMessageTemp.value, multiDocuments, 'user_id'); //you can change "user_id" with your user email
+        return await kaiSearch.chatbot().conversation(conversationId.value, userMessageTemp.value, multiDocuments, 'demo_vue'); //you can change "user_id" with your user email
     } catch (error) {
         console.log(error);
     }
