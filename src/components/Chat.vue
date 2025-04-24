@@ -104,20 +104,19 @@ function stopLoading() {
 
 async function processSearchResult(result: any) {
     try {
-        if (result['action'] == 'SEARCH' && result['datas']['isAnswered']) {
-            messageHistory.value.push({ from: 'assistance', message: "Answer:", docList: [] });
-            let docList = [];
-            if (result['datas']['documents'].length > 0) {
-                docList = result['datas']['documents']
-            }
-            messageHistory.value.push({ from: 'assistance', message: result['content'], docList: docList });
-        } else {
-            messageHistory.value.push({ from: 'assistance', message: result['content'], docList: []});
-            if ('datas' in result && 'reason' in result['datas'] && result['datas']['reason'] != '') {
-                messageHistory.value.push({ from: 'assistance', message: result['datas']['reason'], docList: [] });
-            }
-            step.value = 'conversation'
+        messageHistory.value.push({ from: 'assistance', message: result['content'], docList: []});
+        let docList: string[] = [];
+        if (result['datas']['sources'].length > 0) {
+            docList = result['datas']['sources']
         }
+        let docNameList: string[] = [];
+        for(let docName of docList) {
+            const doc = await kaiSearch.core().getDocSignature(docName);
+            docNameList.push(doc);
+        }
+        messageHistory.value[messageHistory.value.length - 1].docList = docNameList;
+
+        step.value = 'conversation'
     } catch(error) {
         console.log(error);
     }
